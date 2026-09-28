@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Enterprise Average Revenue Per User Hub for Real Estate</title>
+    <title>Enterprise ARPU Hub for Real Estate</title>
     <style>
         body { font-family: system-ui, sans-serif; padding: 30px; background: #0f172a; color: #f3f4f6; max-width: 800px; margin: 0 auto; }
         .card { background: #1e293b; padding: 25px; border-radius: 8px; border: 1px solid #334155; margin-bottom: 20px; }
         .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; }
         .metric-item { background: #0f172a; padding: 15px; border-radius: 6px; text-align: center; border: 1px solid #334155; }
         .metric-val { font-size: 1.5rem; font-weight: bold; color: #34d399; margin-top: 5px; }
-        .checkout { background: linear-gradient(135deg, #1e1b4b, #311042); padding: 30px; border-radius: 8px; text-align: center; border: 1px solid #4c1d95; }
-        .pay-btn { display: inline-block; background: #10b981; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 15px; }
+        .checkout { background: linear-gradient(135deg, #1e1b4b, #311042); padding: 35px; border-radius: 12px; text-align: center; border: 1px solid #4c1d95; }
+        .pay-btn { display: inline-block; background: #10b981; color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 15px; cursor: pointer; border: none; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(16,185,129,0.3); }
+        
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 9999; }
+        .modal-box { background: #1e293b; border: 1px solid #475569; padding: 30px; border-radius: 16px; max-width: 480px; width: 90%; text-align: center; color: #fff; position: relative; }
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; color: #94a3b8; cursor: pointer; }
+        .wallet-row { background: #0f172a; border: 1px solid #334155; padding: 14px; border-radius: 8px; margin: 15px 0; text-align: left; cursor: pointer; }
+        .label { font-size: 0.8rem; color: #94a3b8; font-weight: 600; text-transform: uppercase; }
+        .val { font-family: monospace; font-size: 0.95rem; color: #34d399; word-break: break-all; margin-top: 6px; display: block; background: #1e293b; padding: 8px; border-radius: 4px; border: 1px solid #334155; }
+        .copy-hint { font-size: 0.75rem; color: #38bdf8; float: right; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -23,10 +31,32 @@
             <div class="metric-item">Target Bound<div class="metric-val">Top 10%</div></div>
         </div>
     </div>
+    
     <div class="checkout">
         <h3>Unlock Live API Programmatic Feeds for Real Estate</h3>
-        <div style="font-size: 1.5rem; font-weight: bold; color: #34d399; margin: 10px 0;">$499 / Lifetime Full Access</div>
-        <a href="https://coinbase.com" target="_blank" class="pay-btn">Unlock via Coinbase Commerce</a>
+        <p>Compatible with all global crypto applications (Coinbase, Trust Wallet, Binance, Bybit etc.)</p>
+        <div style="font-size: 1.8rem; font-weight: bold; color: #34d399; margin: 15px 0;">$499 / Lifetime Full Access</div>
+        <button class="pay-btn" onclick="openGateway()">Unlock via Crypto Gateway</button>
     </div>
+
+    <div id="cryptoModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closeGateway()">&times;</span>
+            <h3 style="margin-top:0; color:#38bdf8;">Universal Crypto Checkout</h3>
+            <p style="font-size:0.9rem; color:#94a3b8;">Copy the secure network address string below using any crypto wallet application to transfer funds.</p>
+            
+            <div class="wallet-row" onclick="navigator.clipboard.writeText('TPcXDjVa5yBCc8zEwsc63xHeL6Prcpdekz'); alert('Universal Address Copied to Clipboard!');">
+                <span class="copy-hint">Click Box to Copy</span>
+                <span class="label">Token Protocol: USDT (TRON / TRC20)</span>
+                <span class="val">TPcXDjVa5yBCc8zEwsc63xHeL6Prcpdekz</span>
+            </div>
+            <p style="font-size:0.75rem; color:#94a3b8; margin-bottom:0;">Data layers automatically unlock instantly upon on-chain transaction validation confirmation.</p>
+        </div>
+    </div>
+
+    <script>
+        function openGateway() { document.getElementById('cryptoModal').style.display = 'flex'; }
+        function closeGateway() { document.getElementById('cryptoModal').style.display = 'none'; }
+    </script>
 </body>
 </html>
