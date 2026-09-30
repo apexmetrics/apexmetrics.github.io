@@ -3,8 +3,9 @@ import os
 BASE_URL = "https://github.io"
 USDT_TRC20_ADDRESS = "TPcXDjVa5yBCc8zEwsc63xHeL6Prcpdekz"
 
-print("⚡ INITIATING CLOUD REBUILD: 5,000 PREMIUM DATA NODES...")
+print("⚡ INITIATING STREAMLINED GENERATION SYSTEM...")
 
+# Complete Industries Array
 industries = [
     "Real Estate", "E-commerce", "SaaS Startups", "Healthcare Clinics", "Crypto Exchanges", 
     "Logistics", "Digital Marketing Agencies", "Retail Stores", "Automotive", "Fintech",
@@ -28,6 +29,7 @@ industries = [
     "Data Analytics Firms", "Cloud Hosting Brokers", "IT Support Centers", "Managed Service Providers"
 ]
 
+# Complete Metrics Array
 metrics = [
     {"name": "Customer Acquisition Cost", "code": "CAC"},
     {"name": "Lifetime Value", "code": "LTV"},
@@ -81,9 +83,7 @@ metrics = [
     {"name": "Bug Regression Percentage", "code": "BUGS"}
 ]
 
-if not os.path.exists('articles'):
-    os.makedirs('articles')
-
+os.makedirs('articles', exist_ok=True)
 article_links = []
 sitemap_urls = []
 
@@ -92,20 +92,20 @@ html_template = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise {m_name} Hub for {i_name}</title>
+    <title>Enterprise {m_name} for {i_name}</title>
     <style>
-        body {{ font-family: system-ui, sans-serif; padding: 20px; background: #0f172a; color: #f3f4f6; max-width: 800px; margin: 0 auto; }}
-        .card {{ background: #1e293b; padding: 25px; border-radius: 8px; border: 1px solid #334155; margin-bottom: 20px; }}
-        .metric-grid {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 0; }}
-        .metric-item {{ background: #0f172a; padding: 12px; border-radius: 6px; text-align: center; border: 1px solid #334155; }}
-        .metric-val {{ font-size: 1.2rem; font-weight: bold; color: #34d399; margin-top: 5px; }}
-        .checkout {{ background: linear-gradient(135deg, #1e1b4b, #311042); padding: 30px; border-radius: 12px; text-align: center; border: 1px solid #4c1d95; }}
-        .pay-btn {{ display: inline-block; background: #10b981; color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 15px; cursor: pointer; border: none; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(16,185,129,0.3); }}
+        body {{ font-family: sans-serif; padding: 20px; background: #0f172a; color: #f3f4f6; max-width: 800px; margin: 0 auto; }}
+        .card {{ background: #1e293b; padding: 20px; border-radius: 8px; border: 1px solid #334155; margin-bottom: 20px; }}
+        .metric-grid {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 15px 0; }}
+        .metric-item {{ background: #0f172a; padding: 10px; border-radius: 6px; text-align: center; border: 1px solid #334155; }}
+        .metric-val {{ font-size: 1.1rem; font-weight: bold; color: #34d399; margin-top: 5px; }}
+        .checkout {{ background: linear-gradient(135deg, #1e1b4b, #311042); padding: 25px; border-radius: 12px; text-align: center; border: 1px solid #4c1d95; }}
+        .pay-btn {{ display: inline-block; background: #10b981; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 15px; cursor: pointer; border: none; font-size: 1rem; }}
         .modal-overlay {{ display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 9999; }}
-        .modal-box {{ background: #1e293b; border: 1px solid #475569; padding: 25px; border-radius: 16px; max-width: 440px; width: 92%; text-align: center; color: #fff; position: relative; }}
-        .close-btn {{ position: absolute; top: 15px; right: 20px; font-size: 1.5rem; color: #94a3b8; cursor: pointer; }}
-        .wallet-row {{ background: #0f172a; border: 1px solid #334155; padding: 14px; border-radius: 8px; margin: 15px 0; text-align: left; cursor: pointer; }}
-        .val {{ font-family: monospace; font-size: 0.95rem; color: #34d399; word-break: break-all; margin-top: 6px; display: block; background: #1e293b; padding: 8px; border-radius: 4px; border: 1px solid #334155; }}
+        .modal-box {{ background: #1e293b; border: 1px solid #475569; padding: 20px; border-radius: 16px; max-width: 400px; width: 90%; text-align: center; color: #fff; position: relative; }}
+        .close-btn {{ position: absolute; top: 10px; right: 15px; font-size: 1.4rem; color: #94a3b8; cursor: pointer; }}
+        .wallet-row {{ background: #0f172a; border: 1px solid #334155; padding: 12px; border-radius: 8px; margin: 15px 0; text-align: left; cursor: pointer; }}
+        .val {{ font-family: monospace; font-size: 0.9rem; color: #34d399; word-break: break-all; margin-top: 4px; display: block; background: #1e293b; padding: 6px; border-radius: 4px; border: 1px solid #334155; }}
     </style>
 </head>
 <body>
@@ -121,17 +121,17 @@ html_template = """<!DOCTYPE html>
     <div class="checkout">
         <h3>Unlock Real-time Institutional Access Flow</h3>
         <p>Compatible with all global crypto applications (Coinbase, Trust Wallet, Binance, Bybit etc.)</p>
-        <div style="font-size: 1.8rem; font-weight: bold; color: #34d399; margin: 15px 0;">$499 / One-time Token</div>
+        <div style="font-size: 1.6rem; font-weight: bold; color: #34d399; margin: 10px 0;">$499 / One-time Token</div>
         <button class="pay-btn" onclick="openGateway()">Unlock via Crypto Gateway</button>
     </div>
     <div id="cryptoModal" class="modal-overlay">
         <div class="modal-box">
             <span class="close-btn" onclick="closeGateway()">&times;</span>
             <h3 style="color:#38bdf8; margin-top:0;">Universal Crypto Checkout</h3>
-            <p style="font-size:0.9rem; color:#94a3b8;">Copy the secure network address string below using any crypto wallet application to transfer funds.</p>
-            <div class="wallet-row" onclick="navigator.clipboard.writeText('{trc20}'); alert('Universal Address Copied!');">
-                <span style="font-size:0.75rem; color:#38bdf8; float:right; font-weight:bold;">Click to Copy</span>
-                <span style="font-size:0.8rem; color:#94a3b8; font-weight:600; text-transform:uppercase;">USDT (TRON / TRC20)</span>
+            <p style="font-size:0.85rem; color:#94a3b8;">Copy the secure TRC20 address below using any wallet app to complete transaction.</p>
+            <div class="wallet-row" onclick="navigator.clipboard.writeText('{trc20}'); alert('Address Copied!');">
+                <span style="font-size:0.7rem; color:#38bdf8; float:right;">Click to Copy</span>
+                <span style="font-size:0.75rem; color:#94a3b8; font-weight:600;">USDT (TRON / TRC20)</span>
                 <span class="val">{trc20}</span>
             </div>
         </div>
@@ -143,9 +143,11 @@ html_template = """<!DOCTYPE html>
 </body>
 </html>"""
 
-# Generate all pages efficiently
 for ind in industries:
     for met in metrics:
         slug = f"optimize-{met['code'].lower()}-for-{ind.lower().replace(' ', '-').replace('&', 'and')}"
         with open(f"articles/{slug}.html", "w", encoding="utf-8") as f:
             f.write(html_template.format(i_name=ind, m_name=met['name'], m_code=met['code'], trc20=USDT_TRC20_ADDRESS))
+        article_links.append(f'<li><a href="articles/{slug}.html">{ind} Hub — {met["name"]}</a></li>')
+        sitemap_urls.append(f'  <url><loc>{BASE_URL}articles/{slug}.html</loc></url>')
+
