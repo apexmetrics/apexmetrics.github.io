@@ -9,16 +9,15 @@
         header { text-align: center; margin-bottom: 40px; }
         h1 { font-size: 2.2rem; font-weight: 800; color: #ffffff; margin-bottom: 10px; background: linear-gradient(to right, #38bdf8, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         p { color: #94a3b8; font-size: 1rem; }
-        
-        .section-title { font-size: 1.4rem; font-weight: 700; color: #38bdf8; margin: 40px 0 20px 0; border-bottom: 1px solid #334155; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; list-style: none; padding: 0; margin-bottom: 30px; }
-        li { background: #1e293b; padding: 15px; border-radius: 8px; border: 1px solid #334155; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
-        li:hover { transform: translateY(-3px); border-color: #34d399; box-shadow: 0 4px 20px rgba(52, 211, 153, 0.1); }
-        .metric-title { font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: 12px; }
-        
-        .btn-group { display: flex; flex-direction: column; gap: 8px; }
-        .pay-btn { display: block; text-align: center; background: #10b981; color: #fff; text-decoration: none; font-weight: 700; padding: 10px; border-radius: 6px; font-size: 0.9rem; cursor: pointer; border: none; width: 100%; box-shadow: 0 4px 12px rgba(16,185,129,0.2); }
-        
+        .control-panel { background: #1e293b; padding: 20px; border-radius: 12px; border: 1px solid #334155; margin-bottom: 30px; display: flex; flex-direction: column; gap: 15px; }
+        label { font-size: 0.85rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+        select { background: #0f172a; color: #fff; border: 1px solid #334155; padding: 12px; border-radius: 8px; font-size: 1rem; width: 100%; max-width: 100%; outline: none; }
+        .display-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 25px; margin-bottom: 20px; text-align: center; }
+        .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 0; }
+        .metric-item { background: #0f172a; padding: 12px; border-radius: 6px; text-align: center; border: 1px solid #334155; }
+        .metric-val { font-size: 1.1rem; font-weight: bold; color: #34d399; margin-top: 5px; }
+        .checkout { background: linear-gradient(135deg, #1e1b4b, #311042); padding: 30px; border-radius: 12px; text-align: center; border: 1px solid #4c1d95; }
+        .pay-btn { display: inline-block; background: #10b981; color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 15px; cursor: pointer; border: none; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(16,185,129,0.3); width: 100%; max-width: 320px; }
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 9999; }
         .modal-box { background: #1e293b; border: 1px solid #475569; padding: 25px; border-radius: 16px; max-width: 440px; width: 92%; text-align: center; color: #fff; position: relative; }
         .close-btn { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; color: #94a3b8; cursor: pointer; }
@@ -30,42 +29,35 @@
 
     <header>
         <h1>ApexMetrics Enterprise Data Network Hub</h1>
-        <p>Select a platform node token layer to unlock institutional baseline operational data metrics loops.</p>
+        <p>Configure vertical array metrics to generate live baseline layers and programmatic data streaming channels.</p>
     </header>
 
-    <div class="section-title">🏢 Core Enterprise Matrix Layers</div>
-    <ul class="grid">
-        <li>
-            <div class="metric-title">Real Estate Analytics Data Cluster</div>
-            <div class="btn-group">
-                <button class="pay-btn" onclick="openGateway()">Unlock Node Matrix ($499)</button>
-            </div>
-        </li>
-        <li>
-            <div class="metric-title">E-Commerce Benchmark Data Cluster</div>
-            <div class="btn-group">
-                <button class="pay-btn" onclick="openGateway()">Unlock Node Matrix ($499)</button>
-            </div>
-        </li>
-        <li>
-            <div class="metric-title">SaaS Startups Capital Efficiency Cluster</div>
-            <div class="btn-group">
-                <button class="pay-btn" onclick="openGateway()">Unlock Node Matrix ($499)</button>
-            </div>
-        </li>
-        <li>
-            <div class="metric-title">Crypto Exchanges Operational Velocity Cluster</div>
-            <div class="btn-group">
-                <button class="pay-btn" onclick="openGateway()">Unlock Node Matrix ($499)</button>
-            </div>
-        </li>
-        <li>
-            <div class="metric-title">Fintech Cross-Border Revenue Analytics</div>
-            <div class="btn-group">
-                <button class="pay-btn" onclick="openGateway()">Unlock Node Matrix ($499)</button>
-            </div>
-        </li>
-    </ul>
+    <div class="control-panel">
+        <div>
+            <label for="industrySelect">Select Target Industry Matrix Layer</label>
+            <select id="industrySelect" onchange="updateDataLayer()"></select>
+        </div>
+        <div>
+            <label for="metricSelect">Select Performance Analytics Parameter</label>
+            <select id="metricSelect" onchange="updateDataLayer()"></select>
+        </div>
+    </div>
+
+    <div class="display-card">
+        <h2 id="layerTitle" style="color: #38bdf8; margin-top: 0; font-size: 1.3rem;">Initializing Core Array...</h2>
+        <div class="metric-grid">
+            <div class="metric-item" style="color: #94a3b8; font-size: 0.8rem;">Lower Bound<div class="metric-val">Top 25%</div></div>
+            <div class="metric-item" style="color: #94a3b8; font-size: 0.8rem;">Median Bound<div class="metric-val">Top 50%</div></div>
+            <div class="metric-item" style="color: #94a3b8; font-size: 0.8rem;">Target Bound<div class="metric-val">Top 10%</div></div>
+        </div>
+    </div>
+
+    <div class="checkout">
+        <h3>Unlock Real-time Institutional Access Flow</h3>
+        <p>Compatible with all global crypto applications (Coinbase, Trust Wallet, Binance, Bybit etc.)</p>
+        <div style="font-size: 1.8rem; font-weight: bold; color: #34d399; margin: 15px 0;">$499 / Lifetime Multi-Vertical Access</div>
+        <button class="pay-btn" onclick="openGateway()">Unlock Selected Matrix Node</button>
+    </div>
 
     <div id="cryptoModal" class="modal-overlay">
         <div class="modal-box">
@@ -77,13 +69,47 @@
                 <span style="font-size:0.8rem; color:#94a3b8; font-weight:600; text-transform:uppercase;">USDT (TRON / TRC20)</span>
                 <span class="val">TPcXDjVa5yBCc8zEwsc63xHeL6Prcpdekz</span>
             </div>
-            <p style="font-size:0.75rem; color:#94a3b8; margin-bottom:0;">Data baseline modules automatically initialize directly onto target endpoint configurations upon block validation confirmation.</p>
+            <p style="font-size:0.75rem; color:#94a3b8; margin-bottom:0;">On-chain data layers automatically unlock instantly upon on-chain transaction validation confirmation.</p>
         </div>
     </div>
 
     <script>
-        function openGateway() { document.getElementById('cryptoModal').style.display = 'flex'; }
-        function closeGateway() { document.getElementById('cryptoModal').style.display = 'none'; }
-    </script>
-</body>
-</html>
+        const industries = [
+            "Real Estate", "E-commerce", "SaaS Startups", "Healthcare Clinics", "Crypto Exchanges", 
+            "Logistics", "Digital Marketing Agencies", "Retail Stores", "Automotive", "Fintech",
+            "Edtech", "Renewable Energy", "Construction", "Hospitality and Hotels", "Agriculture tech",
+            "Cybersecurity", "Legal Firms", "Fitness Brands", "Food Delivery", "Gaming Studios",
+            "Aviation", "Fashion Labels", "Pharmaceuticals", "Manufacturing", "Insurance Agencies",
+            "Telecommunications", "Media and Entertainment", "Mining and Metals", "Venture Capital", "Hedge Funds",
+            "Recruitment Agencies", "Event Planning", "Consulting Firms", "Architecture Studios", "Pet Care Brands",
+            "Beauty and Cosmetics", "Subscription Boxes", "Interior Design", "Luxury Goods", "Mental Health Apps",
+            "Cleantech", "Biotech", "Robotics", "AI Startups", "Micro-SaaS", "3D Printing", "Commercial Space",
+            "Drone Services", "E-sports Teams", "Virtual Reality", "Augmented Reality", "Podcasting Networks",
+            "Online Marketplaces", "B2B Wholesalers", "Maritime Shipping", "Chemical Production", "Waste Management",
+            "Water Treatment", "Smart Home Automation", "Wearable Tech", "Influencer Networks", "Affiliate Portals",
+            "Local Plumbers", "HVAC Contractors", "Dental Practices", "Optometry Clinics", "Veterinary Hospitals",
+            "Chiropratic Centers", "Boutique Gyms", "Yoga Studios", "Co-working Spaces", "Storage Facilities",
+            "Car Rentals", "Private Security", "Catering Services", "Cleaning Franchises", "Landscaping Companies",
+            "Roofing Contractors", "Solar Installers", "Electricians", "Photography Studios", "Videography Agencies",
+            "Graphic Design Shops", "Copywriting Agencies", "Translation Bureaus", "Accounting Firms", "Bookkeeping Services",
+            "Tax Consultants", "Wealth Management", "Estate Planning", "Public Relations", "SEO Agencies",
+            "Social Media Managers", "UI-UX Studios", "App Developers", "Web Development Shops", "Cyber Auditing",
+            "Data Analytics Firms", "Cloud Hosting Brokers", "IT Support Centers", "Managed Service Providers"
+        ];
+
+        const metrics = [
+            "Customer Acquisition Cost (CAC)", "Lifetime Value (LTV)", "Monthly Churn Rate (CHURN)", 
+            "Average Revenue Per User (ARPU)", "Burn Rate Metric (BURN)", "Net Promoter Score (NPS)", 
+            "Viral Coefficient (KFACTOR)", "Payback Period (PAYBACK)", "Gross Margin Percentage (MARGIN)", 
+            "Active User Ratio (ENGAGEMENT)", "Trial Conversion Rate (CONVERSION)", "Expansion Revenue Rate (EXPANSION)", 
+            "Lead-to-Customer Velocity (VELOCITY)", "Customer Retention Cost (CRC)", "Revenue Runway Timeline (RUNWAY)", 
+            "Organic Search Traffic Share (SEO_SHARE)", "Paid Ad ROI Coefficient (ROAS)", "Social Sentiment Index (SENTIMENT)", 
+            "Infrastructure Cost Per User (INFRA_COST)", "Support Ticket Resolution Time (TICKET_TIME)", 
+            "Employee LTV Multiplier (HR_ROI)", "Contract Value Velocity (ACV)", "Pipeline Coverage Ratio (COVERAGE)", 
+            "Win Rate Metric (WIN_RATE)", "Quota Attainment Average (QUOTA)", "Net Revenue Retention (NRR)", 
+            "Gross Revenue Retention (GRR)", "Logo Churn Index (LOGO_CHURN)", "Feature Adoption Coefficient (FEATURE_ADOPT)", 
+            "Time to Value (TTV)", "Session Duration Standard (SESSION)", "Bounce Rate Threshold (BOUNCE)", 
+            "Cart Abandonment Average (ABANDON)", "Repeat Purchase Velocity (REPEAT_BUY)", "Inventory Turnover Rate (INVENTORY)", 
+            "Supplier Lead Time Index (SUPPLIER_TIME)", "Order Fulfillment Accuracy (ACCURACY)", "Return Rate Metric (RETURN_RATE)", 
+            "Affiliate Commission Yield (AFFILIATE)", "Referral Program Velocity (REFERRAL)", "Email Open Rate Standard (EMAIL_OPEN)", 
+            "Click-Through Rate (CTR)", "Cost Per Lead (CPL)", "Subscriber Growth Velocity (SUBSCRIBERS)", 
