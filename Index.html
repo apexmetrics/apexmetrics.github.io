@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexMetrics Enterprise Data Network Hub</title>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; background: #0f172a; color: #f3f4f6; max-width: 1200px; margin: 0 auto; padding: 30px 15px; }
+        header { text-align: center; margin-bottom: 40px; }
+        h1 { font-size: 2.2rem; font-weight: 800; color: #ffffff; margin-bottom: 10px; background: linear-gradient(to right, #38bdf8, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p { color: #94a3b8; font-size: 1rem; }
+        
+        .section-title { font-size: 1.4rem; font-weight: 700; color: #38bdf8; margin: 40px 0 20px 0; border-bottom: 1px solid #334155; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; list-style: none; padding: 0; margin-bottom: 30px; }
+        li { background: #1e293b; padding: 15px; border-radius: 8px; border: 1px solid #334155; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
+        li:hover { transform: translateY(-3px); border-color: #34d399; box-shadow: 0 4px 20px rgba(52, 211, 153, 0.1); }
+        .metric-title { font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: 12px; }
+        
+        .btn-group { display: flex; flex-direction: column; gap: 8px; }
+        .pay-btn { display: block; text-align: center; background: #10b981; color: #fff; text-decoration: none; font-weight: 700; padding: 10px; border-radius: 6px; font-size: 0.9rem; cursor: pointer; border: none; width: 100%; box-shadow: 0 4px 12px rgba(16,185,129,0.2); }
+        
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 9999; }
+        .modal-box { background: #1e293b; border: 1px solid #475569; padding: 25px; border-radius: 16px; max-width: 440px; width: 92%; text-align: center; color: #fff; position: relative; }
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; color: #94a3b8; cursor: pointer; }
+        .wallet-row { background: #0f172a; border: 1px solid #334155; padding: 14px; border-radius: 8px; margin: 15px 0; text-align: left; cursor: pointer; }
+        .val { font-family: monospace; font-size: 0.95rem; color: #34d399; word-break: break-all; margin-top: 6px; display: block; background: #1e293b; padding: 8px; border-radius: 4px; border: 1px solid #334155; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ApexMetrics Enterprise Data Network Hub</h1>
+        <p>Select a platform node token layer to unlock institutional baseline operational data metrics loops.</p>
+    </header>
+
+    <div class="section-title">🏢 Core Enterprise Matrix Layers</div>
+    <ul class="grid">
+        <li>
+            <div class="metric-title">Real Estate Analytics Data Cluster</div>
+            <div class="btn-group">
+                <button class="pay-btn" onclick="openGateway()">Unlock Node Matrix ($499)</button>
+            </div>
+        </li>
+        <li>
+            <div class="metric-title">E-Commerce Benchmark Data Cluster</div>
+            <div class="btn-group">
+                <button class="pay-btn" onclick="openGateway()">Unlock Node Matrix ($499)</button>
+            </div>
+        </li>
+        <li>
+            <div class="metric-title">SaaS Startups Capital Efficiency Cluster</div>
+            <div class="btn-group">
+                <button class="pay-btn" onclick="openGateway()">Unlock Node Matrix ($499)</button>
+            </div>
+        </li>
+        <li>
+            <div class="metric-title">Crypto Exchanges Operational Velocity Cluster</div>
+            <div class="btn-group">
+                <button class="pay-btn" onclick="openGateway()">Unlock Node Matrix ($499)</button>
+            </div>
+        </li>
+        <li>
+            <div class="metric-title">Fintech Cross-Border Revenue Analytics</div>
+            <div class="btn-group">
+                <button class="pay-btn" onclick="openGateway()">Unlock Node Matrix ($499)</button>
+            </div>
+        </li>
+    </ul>
+
+    <div id="cryptoModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closeGateway()">&times;</span>
+            <h3 style="margin-top:0; color:#38bdf8;">Universal Crypto Checkout</h3>
+            <p style="font-size:0.9rem; color:#94a3b8;">Copy the secure network address string below using any crypto wallet application to complete transfer.</p>
+            <div class="wallet-row" onclick="navigator.clipboard.writeText('TPcXDjVa5yBCc8zEwsc63xHeL6Prcpdekz'); alert('Universal Address Copied to Clipboard!');">
+                <span style="font-size:0.75rem; color:#38bdf8; float:right; font-weight:bold;">Click to Copy</span>
+                <span style="font-size:0.8rem; color:#94a3b8; font-weight:600; text-transform:uppercase;">USDT (TRON / TRC20)</span>
+                <span class="val">TPcXDjVa5yBCc8zEwsc63xHeL6Prcpdekz</span>
+            </div>
+            <p style="font-size:0.75rem; color:#94a3b8; margin-bottom:0;">Data baseline modules automatically initialize directly onto target endpoint configurations upon block validation confirmation.</p>
+        </div>
+    </div>
+
+    <script>
+        function openGateway() { document.getElementById('cryptoModal').style.display = 'flex'; }
+        function closeGateway() { document.getElementById('cryptoModal').style.display = 'none'; }
+    </script>
+</body>
+</html>
 
